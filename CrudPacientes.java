@@ -3,10 +3,10 @@ import java.util.Scanner;
 
 public class CrudPacientes {
 
-    // Configuración de la conexión (Igual que en TestConnection)
+    // Configuración de la conexión (igual que en TestConnection)
     static final String URL = "jdbc:mysql://localhost:3306/dbtest?useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
-    static final String PASS = "20pedro01A"; // Cambiar a "" si es necesario para Wamp
+    static final String PASS = ""; // Cambiar a si es necesario para Wamp
 
     public static void main(String[] args) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
@@ -25,9 +25,9 @@ public class CrudPacientes {
 
                 if (scanner.hasNextInt()) {
                     opcion = scanner.nextInt();
-                    scanner.nextLine(); // Consumir nueva línea
+                    scanner.nextLine();
                 } else {
-                    scanner.next(); // Limpiar entrada inválida
+                    scanner.next();
                     continue;
                 }
 
@@ -120,7 +120,7 @@ public class CrudPacientes {
         System.out.print("Elige una opción: ");
 
         int opcion = scanner.nextInt();
-        scanner.nextLine(); // Consumir enter
+        scanner.nextLine();
 
         String sql = "";
         String nuevoValor = "";
@@ -189,3 +189,4 @@ public class CrudPacientes {
         }
     }
 }
+
