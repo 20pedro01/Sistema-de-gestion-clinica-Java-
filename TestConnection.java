@@ -4,21 +4,16 @@ import java.sql.SQLException;
 
 public class TestConnection {
     public static void main(String[] args) {
-        // Configuración de la conexión (Basada en tu configuración local original)
+        // Puede cambiar el puerto
         String url = "jdbc:mysql://localhost:3306/dbtest?useSSL=false&serverTimezone=UTC";
         String usuario = "root";
 
-        // NOTA: WampServer por defecto no tiene contraseña (string vacío "").
-        // Pero tu archivo original tenía '20pedro01A'.
-        // Si falla la conexión, cambia esto a: String password = "";
-        String password = "20pedro01A";
+        String password = "";
 
         System.out.println("Intentando conectar a: " + url);
         System.out.println("Usuario: " + usuario);
 
         try {
-            // Cargar el driver (Opcional en versiones nuevas de Java, pero buena práctica
-            // para debug)
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             Connection conexion = DriverManager.getConnection(url, usuario, password);
@@ -48,3 +43,4 @@ public class TestConnection {
         }
     }
 }
+
