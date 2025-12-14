@@ -17,22 +17,19 @@ public class MenuPrincipal {
 
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // Consumir nueva línea
+                scanner.nextLine();
             } else {
-                scanner.next(); // Limpiar entrada inválida
+                scanner.next();
                 System.out.println("Por favor, ingresa un número válido.");
                 continue;
             }
 
             switch (opcion) {
                 case 1:
-                    // Llamamos al main de CrudExample (Pacientes)
-                    // Pasamos argumentos vacíos ya que CrudExample no los usa
                     System.out.println("\n>>> Accediendo a Gestión de Pacientes...");
                     CrudPacientes.main(new String[] {});
                     break;
                 case 2:
-                    // Llamamos al main de CrudEspecialistas (Especialistas)
                     System.out.println("\n>>> Accediendo a Gestión de Especialistas...");
                     CrudEspecialistas.main(new String[] {});
                     break;
