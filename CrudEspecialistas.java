@@ -6,7 +6,7 @@ public class CrudEspecialistas {
     // Configuración de la conexión
     static final String URL = "jdbc:mysql://localhost:3306/dbtest?useSSL=false&serverTimezone=UTC";
     static final String USER = "root";
-    static final String PASS = "20pedro01A"; // Cambiar a "" si es necesario para Wamp
+    static final String PASS = ""; // Cambiar si es necesario para Wamp
 
     public static void main(String[] args) {
         try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
@@ -25,9 +25,9 @@ public class CrudEspecialistas {
 
                 if (scanner.hasNextInt()) {
                     opcion = scanner.nextInt();
-                    scanner.nextLine(); // Consumir nueva línea
+                    scanner.nextLine(); 
                 } else {
-                    scanner.next(); // Limpiar entrada inválida
+                    scanner.next(); 
                     continue;
                 }
 
@@ -189,3 +189,4 @@ public class CrudEspecialistas {
         }
     }
 }
+
